@@ -27,7 +27,7 @@ const getStopDataNextbus = async () => {
   let jsonResponseArr = []
   for await (let stop of stops) {
     const rawResponse = await fetch(
-      `http://webservices.nextbus.com/service/publicJSONFeed?command=predictions&a=${stop.agency}&stopId=${stop.id}`, { mode: 'no-cors' }
+      `https://retro.umoiq.com/service/publicJSONFeed?command=predictions&a=${stop.agency}&stopId=${stop.id}`, { mode: 'no-cors' }
     )
     const jsonResponse = await rawResponse.json()
     jsonResponseArr.push(jsonResponse.predictions)
